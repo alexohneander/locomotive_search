@@ -58,6 +58,27 @@ Then, deploy your site and open the back-office of your Locomotive site. Go to t
 
 If you want to force the re-indexing all of the content of the site, toggle on the `reset` field and save the site. This procedure will start by deleting all the existing Algolia indices.
 
+### Elasticsearch
+
+Each Locomotive site has to set the url required to access the Elasticsearch API. This can be done by adding a new metafield namespace named `elastic` in the Wagon source of the site.
+
+In the `config/metafields_schema.yaml` file, add the following lines:
+
+```yaml
+elastic:
+  label: Elastic settings
+  fields:
+    elastic_url:
+      type: string
+    api_key:
+      type: string
+    elastic_log:
+      type: boolean
+    reset:
+      type: boolean
+      hint: 'If switched on and after pressed the save button, re-index the content of the site '
+ ```
+
 ## How to contribute
 
 Locomotive is an open source project, we encourage contributions. If you have found a bug and want to contribute a fix, or have a new feature you would like to add, follow the steps below to get your patch into the project:
