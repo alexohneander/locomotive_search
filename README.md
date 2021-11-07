@@ -9,7 +9,7 @@ For now, only [Algolia](https://www.algolia.com) and [Elasticsearch](https://www
 Add this line to your Rails app's Gemfile powering Locomotive Engine.
 
 ```ruby
-gem 'twitter', github: 'alexohneander/locomotive_search'
+gem 'locomotivecms_search', github: 'alexohneander/locomotive_search'
 ```
 
 And then execute:
