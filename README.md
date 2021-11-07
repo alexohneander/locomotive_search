@@ -2,14 +2,14 @@
 
 Locomotive Search is an add-on for Locomotive Engine enhancing it by indexing the content of any site.
 
-For now, only [Algolia](https://www.algolia.com) is supported.
+For now, only [Algolia](https://www.algolia.com) and [Elasticsearch](https://www.elastic.co/elasticsearch/) is supported.
 
 ## Installation
 
 Add this line to your Rails app's Gemfile powering Locomotive Engine.
 
 ```ruby
-gem 'locomotivecms_search'
+gem 'twitter', github: 'alexohneander/locomotive_search'
 ```
 
 And then execute:
