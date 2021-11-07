@@ -23,6 +23,8 @@ Open your `config/application.rb` file of your Rails app and assign a backend li
 class MyApplication < Rails::Application
   ...
   config.x.locomotive_search_backend = :algolia
+  # or
+  config.x.locomotive_search_backend = :elastic
   ...
 end
 ```
