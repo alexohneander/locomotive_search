@@ -17,11 +17,13 @@ module Locomotive
             end
 
             def save_object(type: nil, object_id: nil, title: nil, content: nil, visible: true, data: {})
-                base_object = { objectID: object_id, visible: visible, type: type }
-                object      = { title: title, content: content, data: data }.merge(base_object)
-      
-                client.index index: object_index(type), type: type, body: object
-                client.index index: global_index, type: type, body: object
+                if !content.nil? && !content.empty?
+                    base_object = { objectID: object_id, visible: visible, type: type }
+                    object      = { title: title, content: content, data: data }.merge(base_object)
+                    
+                    client.index index: object_index(type), type: type, id: object_id, body: object
+                    client.index index: global_index, type: type, id: object_id, body: object
+                end
             end
     
             def delete_object(type, object_id)
