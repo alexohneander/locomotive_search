@@ -79,6 +79,13 @@ elastic:
       hint: 'If switched on and after pressed the save button, re-index the content of the site '
  ```
 
+If you also want to use the Elastic Search backend you need to add the following to your `routes.rb` :
+```ruby
+# Custom Route for our search engine
+get '/api/search', to: 'locomotive/search#search'
+```
+
+
 ## How to contribute
 
 Locomotive is an open source project, we encourage contributions. If you have found a bug and want to contribute a fix, or have a new feature you would like to add, follow the steps below to get your patch into the project:
