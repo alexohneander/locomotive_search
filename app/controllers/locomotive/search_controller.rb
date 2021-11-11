@@ -20,7 +20,7 @@ module Locomotive
         before_action :load_site, :load_locale
 
         def search 
-            search_string = params[:content]
+            search_string = params[:content] + '*'
 
             elastic_response = client.search index: global_index, body: { query: { match: { content: search_string } } }
 
